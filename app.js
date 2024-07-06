@@ -45,7 +45,7 @@
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
-    console.log('user in')
+    console.log('user sign in')
 
     // ...
   })
@@ -65,6 +65,7 @@
     // Signed in 
     const user = userCredential.user;
     console.log(user)
+    console.log('u have sign up')
     // ...
   })
   .catch((error) => {

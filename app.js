@@ -47,6 +47,7 @@
   btn1.addEventListener('click',user1)
   var btn2 = document.getElementById('dll')
   btn2.addEventListener('click',logoutuser)
+  btn2.addEventListener('click',jol)
 
 
 
@@ -62,6 +63,7 @@
     console.log('user sign in')
     hjk.style.display = "block";
     nml.style.display = "none";
+    pol(email.value,pass.value,name.value,dat1.value)
   
     // ...
   })
@@ -114,19 +116,21 @@
   
  
   var name = document.getElementById('mop')
-  var last_name = document.getElementById('lmp')
+
+  var pic = document.getElementById('inputfile')
+  var image = document.getElementById('mnv')
 
 
 
-
-
-async function pol(email,password){
+async function pol(email,password,name,dat1){
   try {
     const docRef = await addDoc(collection(db, "users"), {
       
       
       email: email,
       password: password,
+      name: name,
+      date: dat1
     
     
     });
@@ -134,4 +138,7 @@ async function pol(email,password){
   } catch (e) {
     console.error("Error adding document: ", e);
   }
+}
+function jol(){
+  image.src = pic.src
 }

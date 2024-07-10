@@ -11,7 +11,7 @@
     getFirestore,
     collection,
     addDoc,
-    getDocs,
+    getDocs
   } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js"
 
 
@@ -47,7 +47,7 @@
   btn1.addEventListener('click',user1)
   var btn2 = document.getElementById('dll')
   btn2.addEventListener('click',logoutuser)
-  btn2.addEventListener('click',jol)
+  
 
 
 
@@ -61,9 +61,9 @@
     // Signed up 
     const user = userCredential.user;
     console.log('user sign in')
-    hjk.style.display = "block";
+    hjk.style.display = "flex";
     nml.style.display = "none";
-    pol(email.value,pass.value,name.value,dat1.value)
+    
   
     // ...
   })
@@ -85,7 +85,7 @@
     console.log(user)
     console.log('u have sign up')
     // ...
-    hjk.style.display = "block";
+    hjk.style.display = "flex";
     nml.style.display = "none";
     
 
@@ -111,34 +111,73 @@
   const db = getFirestore(app);
 
 
-  var dat1 = document.getElementById('mbl')
-  var credit = document.getElementById('fuc')
+  var dat1 = document.getElementById('productDetail')
+  var name = document.getElementById('productName')
+  var pic = document.getElementById('productImage')
+  var price = document.getElementById('productPrice')
+  var buTTon = document.getElementById('jlk')
+  var inne3 = document.getElementById('kabhi')
+
+  // var productDetail = 
+  // var picture = 
   
- 
-  var name = document.getElementById('mop')
+  // var Price = 
 
-  var pic = document.getElementById('inputfile')
-  var image = document.getElementById('mnv')
+  
+  
+  
+  buTTon.addEventListener('click',pol)
+async function pol()
+{
+  jol(name.value,dat1.value,price.value,pic.value)
+}
 
 
-
-async function pol(email,password,name,dat1){
+async function jol(productName,productDetail,price,picture){
   try {
     const docRef = await addDoc(collection(db, "users"), {
-      
-      
-      email: email,
-      password: password,
-      name: name,
-      date: dat1
-    
-    
+      productName: productName,
+      productDetail: productDetail,
+      price: price,
+      picture: picture,
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
     console.error("Error adding document: ", e);
   }
+  
 }
-function jol(){
-  image.src = pic.src
+async function knl(){
+  const querySnapshot = await getDocs(collection(db, "users"));
+querySnapshot.forEach((doc) => {
+  console.log(`${doc.id} => ${doc.data()}`);
+var card =`<div class="card">
+            <img src="${doc.data().picture}" alt="Denim Jeans" style="width:100%" height="200px">
+            <h1>${doc.data().productName}</h1>
+            <p class="price">$${doc.data().price}</p>
+            <p>${doc.data().productDetail}</p>
+            <p><button>Add to Cart</button></p>
+          </div>`
+          inne3.innerHTML += card 
+
+
+});
 }
+  knl()
+  buTTon.addEventListener('click',clear)
+
+
+function clear(){
+  name.value = ''
+  dat1.value=''
+  price.value=''
+  pic.value=''
+  dat1.value=''
+}
+
+
+
+
+
+
+

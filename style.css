@@ -73,6 +73,117 @@
       max-width: 350px;
     }
   }
-  .kon{
-    display: none;
+  #hjk{
+display: none;
+width: 100%;
+height: 100%;
+border: 2px soild black;
   }
+  .kon{
+    display: block;
+    width: 20%;
+    margin-left: 30px;
+
+    }
+
+  #nml{
+    display: block;
+  }
+ 
+  .nbm{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+/* border: 2px solid black; */
+width: 70%;
+margin-left: 60px;
+margin-top: 10px;
+
+
+
+
+
+
+
+
+
+  }
+  .container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-group textarea {
+    height: 100px;
+}
+.form-group input[type="file"] {
+    padding: 10px 0;
+}
+.form-group .btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.form-group .btn:hover {
+    background-color: #45a049;}
+
+
+
+
+    #vbv{
+      margin-top: 5px;
+      margin-left: 5px;
+    }
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+      margin-top: 15px;
+    }
+    
+    .price {
+      color: grey;
+      font-size: 22px;
+    }
+    
+    .card button {
+      border: none;
+      outline: 0;
+      padding: 12px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+    
+    .card button:hover {
+      opacity: 0.7;
+    }
